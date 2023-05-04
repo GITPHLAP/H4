@@ -68,15 +68,16 @@ void TwoWayLinkedList_Insert_Cycle(TwoLinkedList** head, int newValue) {
 	TwoLinkedList* last = *head;
 
 	nextNode->val = newValue;
-	nextNode->next = *head;
 
 	if (*head == NULL) {
 		*head = (TwoLinkedList*)malloc(sizeof(TwoLinkedList));
 		(*head)->val = NULL;
 
-		nextNode->next = *head; // Reassign the new node next value to head
-		nextNode->prev = *head; // Reassign the new node's prev value to head
+		// Set the new node's next and prev
+		nextNode->next = *head;
+		nextNode->prev = *head;
 
+		// Set the head's next and prev
 		(*head)->next = nextNode;
 		(*head)->prev = nextNode;
 		return;
@@ -86,9 +87,11 @@ void TwoWayLinkedList_Insert_Cycle(TwoLinkedList** head, int newValue) {
 	while (last->next != *head) {
 		last = last->next;
 	}
-	nextNode->prev = last;
-	last->next = nextNode;
-	(*head)->prev = nextNode;
+
+	nextNode->next = *head; // The newNode's next is the head
+	nextNode->prev = last; // NewNode's prev is the last element 
+	last->next = nextNode; // The last elemen's next is the new element 
+	(*head)->prev = nextNode; // The head's prev is the new node 
 	return;
 }
 

@@ -128,13 +128,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="linked_list_1_way.c" />
     <ClCompile Include="linked_list_2_way.c" />
     <ClCompile Include="main.c" />
-    <ClCompile Include="Models.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="linked_list_1_way.h" />
     <ClInclude Include="linked_list_2_way.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="Models.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

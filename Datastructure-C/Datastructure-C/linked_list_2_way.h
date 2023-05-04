@@ -1,4 +1,4 @@
-#include "Models.c"
+#include "Models.h"
 #pragma once
 void TwoWayLinkedList_Insert(TwoLinkedList** head, int newValue);
 void TwoWayLinkedList_DeleteThisNode(TwoLinkedList** head, TwoLinkedList* node);

@@ -1,5 +1,4 @@
-#include <stdio.h>
-
+#pragma once
 typedef struct OneLinkedList {
 	int val;
 	struct OneLinkedList* next;
